@@ -1,3 +1,5 @@
 baseURL = 'https://www2.giancampo.com/'
 languageCode = 'en-us'
 title = 'Gianluca Campo: My New Hugo Site'
+theme = 'hugo-bearblog'
+publishDir = "docs" 
