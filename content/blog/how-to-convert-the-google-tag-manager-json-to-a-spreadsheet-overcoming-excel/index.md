@@ -4,7 +4,7 @@ date: "2023-08-04T21:25:00.110+02:00"
 draft: false
 tags: ["analytics", "google-analytics", "google-tag-manager", "knime"]
 source: "blogger"
-original_url: "https://www.giancampo.com/2023/08/how-to-convert-google-tag-manager-json.html"
+original_url: "/blog/how-to-convert-the-google-tag-manager-json-to-a-spreadsheet-overcoming-excel/"
 ---
 
 Most of the time you can easily convert a Google Tag Manager JSON file to an

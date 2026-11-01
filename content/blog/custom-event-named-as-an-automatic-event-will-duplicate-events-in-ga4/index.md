@@ -4,7 +4,7 @@ date: "2023-11-05T16:39:00.005+01:00"
 draft: false
 tags: ["analytics", "google-analytics", "google-tag-manager"]
 source: "blogger"
-original_url: "https://www.giancampo.com/2023/11/custom-event-named-as-automatic-event.html"
+original_url: "/blog/custom-event-named-as-an-automatic-event-will-duplicate-events-in-ga4/"
 ---
 
 Some days ago I found a question on Reddit asking [what happens when Custom Event and GTM GA4 Event have the same event\_name?](https://www.reddit.com/r/GoogleAnalytics/comments/17fa6k9/what_happens_when_custom_event_and_gtm_ga4_event/) I wanted to be 100% sure about the answer so **I decided to do a pretty simple test** I will show in the next lines.

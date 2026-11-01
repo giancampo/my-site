@@ -1,9 +1,13 @@
 ---
 title: "About Gianluca Campo"
-menu: main
+menu:
+  main:
+    name: "About"
+    weight: 2
 ---
 
-### 
+
+![Gianluca Campo](img-01-53c7de.jpg)
 
 Hello, I'm Gianluca Campo and this is my personal blog where I share interests and studies.
 
@@ -11,11 +15,11 @@ Hello, I'm Gianluca Campo and this is my personal blog where I share interests a
 
 Here follows a list of main interests you could find posts about here:
 
-* [Python](https://www.giancampo.com/search/label/python), R
-* [KNIME analytics platform](https://www.giancampo.com/search/label/knime)
-* [Google Analytics](https://www.giancampo.com/search/label/google-analytics), [Google Tag Manager](https://www.giancampo.com/search/label/google-tag-manager), BigQuery
+* [Python](/tags/python/), R
+* [KNIME analytics platform](/tags/knime/)
+* [Google Analytics](/tags/google-analytics/), [Google Tag Manager](/tags/google-tag-manager/), BigQuery
 * Data Analytics
-* [SEO](https://www.giancampo.com/search/label/seo)
+* [SEO](/tags/seo/)
 * Web scraping
 
 #### Social references

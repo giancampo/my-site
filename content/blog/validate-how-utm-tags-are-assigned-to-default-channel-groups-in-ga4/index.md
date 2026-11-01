@@ -4,7 +4,7 @@ date: "2024-01-22T20:10:00.007+01:00"
 draft: false
 tags: ["analytics", "google-analytics", "python"]
 source: "blogger"
-original_url: "https://www.giancampo.com/2024/01/validate-how-utm-tags-are-assigned-to.html"
+original_url: "/blog/validate-how-utm-tags-are-assigned-to-default-channel-groups-in-ga4/"
 ---
 
 Last summer I've attended the [GA4 Summit](https://ga4summit.it/) event organized by Tag Manager Italia, here in Italy. In particular I remember **a talk by Steen Rasmussen titled "Campaign tracking and attribution in GA4 - Tips, tricks and tactics"**, an inspiring one - as always by Steen, as far as I can tell - about the new importance of campaign tracking caused by the transition to GA4.

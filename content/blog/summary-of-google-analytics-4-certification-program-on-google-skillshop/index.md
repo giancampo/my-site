@@ -4,7 +4,7 @@ date: "2023-02-21T19:42:00.005+01:00"
 draft: false
 tags: ["analytics"]
 source: "blogger"
-original_url: "https://www.giancampo.com/2023/02/summary-of-google-analytics-4.html"
+original_url: "/blog/summary-of-google-analytics-4-certification-program-on-google-skillshop/"
 ---
 
 This post comes from the notes I wrote down before taking the Google Analytics 4 Certification. 
@@ -381,7 +381,6 @@ To be sure you're measuring the things that matter to your business, you'll like
 3. Use different exploration techniques to uncover deeper insights
 4. Data in Reports and Explorations should typically look the same,  but there are times when they could be different
 
-# 
 
 # 3. Measure Your Marketing with Google Analytics
 

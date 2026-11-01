@@ -4,7 +4,7 @@ date: "2024-11-05T23:00:00.000Z"
 draft: false
 tags: []
 source: "beehiiv"
-original_url: "https://blog.giancampo.com/p/attribution-masterclass-my-notes"
+original_url: "/blog/attribution-masterclass-my-notes/"
 ---
 
 ## Table of Contents

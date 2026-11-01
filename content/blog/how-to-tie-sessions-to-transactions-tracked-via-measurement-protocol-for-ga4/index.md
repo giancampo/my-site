@@ -4,7 +4,7 @@ date: "2023-01-26T11:13:00.002+01:00"
 draft: false
 tags: ["analytics"]
 source: "blogger"
-original_url: "https://www.giancampo.com/2023/01/how-to-tie-sessions-to-transactions-tracked-via-measurement-protocol-for-ga4.html"
+original_url: "/blog/how-to-tie-sessions-to-transactions-tracked-via-measurement-protocol-for-ga4/"
 ---
 
 Today, I'm going to show a simple yet powerful experiment I've made with Google Analytics Measurement Protocol.

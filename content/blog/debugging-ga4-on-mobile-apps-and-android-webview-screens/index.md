@@ -4,7 +4,7 @@ date: "2024-11-18T16:33:31.811Z"
 draft: false
 tags: []
 source: "beehiiv"
-original_url: "https://blog.giancampo.com/p/debugging-ga4-on-mobile-apps-and-android-webview-screens"
+original_url: "/blog/debugging-ga4-on-mobile-apps-and-android-webview-screens/"
 ---
 
 ## Table of Contents

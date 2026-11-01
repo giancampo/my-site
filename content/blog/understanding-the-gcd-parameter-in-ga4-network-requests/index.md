@@ -4,7 +4,7 @@ date: "2024-02-11T23:00:00.000Z"
 draft: false
 tags: []
 source: "beehiiv"
-original_url: "https://blog.giancampo.com/p/understanding-the-gcd-parameter-in-ga4-network-requests"
+original_url: "/blog/understanding-the-gcd-parameter-in-ga4-network-requests/"
 ---
 
 ## Table of Contents
