@@ -1,4 +1,4 @@
-baseURL = 'https://www.giancampo.com/'
+baseURL = 'https://www2.giancampo.com/'
 languageCode = 'en-us'
 title = 'Gianluca Campo: Exploring Digital Analytics, Digital Marketing Data, and Automation'
 theme = 'hugo-bearblog'
