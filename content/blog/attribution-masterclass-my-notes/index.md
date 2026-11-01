@@ -7,9 +7,9 @@ source: "beehiiv"
 original_url: "/blog/attribution-masterclass-my-notes/"
 ---
 
-The Attribution Masterclass is a series about marketing attribution organized by [Timo Dechau](https://www.blogger.com/u/1/blog/post/edit/4558571487857691249/8327132209806996838#) and [Barbara Galiza](https://www.blogger.com/u/1/blog/post/edit/4558571487857691249/8327132209806996838#). I'm thrilled to share I've been in the first cohort taking the masterclass with regular meetups every Thursday in November 2024.
+The Attribution Masterclass is a series about marketing attribution organized by [Timo Dechau](https://www.linkedin.com/in/timo-dechau/) and [Barbara Galiza](https://www.linkedin.com/in/barbara-galiza/). I'm thrilled to share I've been in the first cohort taking the masterclass with regular meetups every Thursday in November 2024.
 
-Here follow my notes with the most important concepts shown during the masterclass. Some of the notions would be better explained using the slides the authors have made: For that, you need to actually enroll in the Masterclass: [here's the page where you can sign up](https://www.blogger.com/u/1/blog/post/edit/4558571487857691249/8327132209806996838#).
+Here follow my notes with the most important concepts shown during the masterclass. Some of the notions would be better explained using the slides the authors have made: For that, you need to actually enroll in the Masterclass: [here's the page where you can sign up](https://attribution.kit.com/c9c1df6aae).
 
 Let me recommend you to follow Timo and Barbara on Linkedin to know more about the masterclass and in general to get interesting insights and opinions on marketing attribution.
 
@@ -98,9 +98,9 @@ Let me recommend you to follow Timo and Barbara on Linkedin to know more about t
 
 5. References about UTM parameters
 
-   1. [Campaign (UTM) Parameter Naming Conventions revisited: Cryptic vs. Positional vs. Key-Value Notation | by Lukas Oldenburg | Medium](https://www.blogger.com/blog/post/edit/4558571487857691249/59657827273504101#) by Lukas Oldenburg
+   1. [Campaign (UTM) Parameter Naming Conventions revisited: Cryptic vs. Positional vs. Key-Value Notation | by Lukas Oldenburg | Medium](https://lukas-oldenburg.medium.com/campaign-utm-parameter-naming-conventions-revisited-cryptic-vs-1d5c87c449f1) by Lukas Oldenburg
 
-   2. [How to Improve Paid Media Analysis and Performance with Naming Conventions](https://www.blogger.com/blog/post/edit/4558571487857691249/59657827273504101#) By Barbara Galiza.
+   2. [How to Improve Paid Media Analysis and Performance with Naming Conventions](https://www.021newsletter.com/p/how-to-improve-paid-media-analysis) By Barbara Galiza.
 
 ### User journeys and user stitching
 
@@ -172,7 +172,7 @@ Let me recommend you to follow Timo and Barbara on Linkedin to know more about t
 
    3. There’s a study by Google showing how many clicks were incremental and how many were cannibalized to Organic Search
 
-   4. Here’s another case history by Barbara Galiza [Measuring incremental impressions, clicks and conversions for Paid Search (Methodology + Google Sheet Template)](https://www.blogger.com/blog/post/edit/4558571487857691249/4992278503374398255#)
+   4. Here’s another case history by Barbara Galiza [Measuring incremental impressions, clicks and conversions for Paid Search (Methodology + Google Sheet Template)](https://www.021newsletter.com/p/measuring-incrementality-paid-brand-search)
 
 2. Conversion incrementality
 
@@ -184,7 +184,7 @@ Let me recommend you to follow Timo and Barbara on Linkedin to know more about t
 
    1. Holdout tests are performed turning off a campaign to all or certain audiences
 
-   2. Geofencing is a technique similar to the previous one but in this case campaigns are turned off based on geographical areas. GeoLift is an R package made by Meta helping with this [GeoLift Walkthrough | GeoLift](https://www.blogger.com/blog/post/edit/4558571487857691249/4992278503374398255#)
+   2. Geofencing is a technique similar to the previous one but in this case campaigns are turned off based on geographical areas. GeoLift is an R package made by Meta helping with this [GeoLift Walkthrough | GeoLift](https://facebookincubator.github.io/GeoLift/docs/GettingStarted/Walkthrough/)
 
    3. Causal inference, is a statistical model measuring correlation btw campaigns and sales.
 

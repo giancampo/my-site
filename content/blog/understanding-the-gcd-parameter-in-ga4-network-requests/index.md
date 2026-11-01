@@ -13,7 +13,7 @@ Given this premise, **you can probably imagine how much I hate the new gcd param
 
 ### The gcd parameter in GA4 network requests
 
-For those who don't know what I'm talking about, I strongly recommend having a look [at this guide on the Simo Ahava's blog](https://www.blogger.com/blog/post/edit/4558571487857691249/1710232112511730921#) authored by [Markus Baersch](https://www.blogger.com/blog/post/edit/4558571487857691249/1710232112511730921#), to get a deeper understanding of Consent Mode v2 and the gcd parameter.
+For those who don't know what I'm talking about, I strongly recommend having a look [at this guide on the Simo Ahava's blog](https://www.simoahava.com/analytics/consent-mode-v2-google-tags/) authored by [Markus Baersch](https://www.markus-baersch.de/), to get a deeper understanding of Consent Mode v2 and the gcd parameter.
 
 For the sake of this post, **I will summarize here the main components of this parameter.** The value passed in the gcd parameter consists of:
 
