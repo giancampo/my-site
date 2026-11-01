@@ -31,8 +31,13 @@ BLOGGER_TO_BEEHIIV = {
 
 
 def slugify(s):
+    import unicodedata
+    s = unicodedata.normalize("NFKD", s).encode("ascii", "ignore").decode()
     s = re.sub(r"[^\w\s-]", "", s.lower()).strip()
-    return re.sub(r"[\s_-]+", "-", s)[:80].strip("-")
+    s = re.sub(r"[\s_-]+", "-", s)
+    if len(s) > 80:
+        s = s[:80].rsplit("-", 1)[0]
+    return s.strip("-")
 
 
 def norm(t):
@@ -84,12 +89,27 @@ def write_post(source, title, date, html, tags, old_url, summary=""):
             s.replace_with(BeautifulSoup(f'<p><a href="{s.get("src","")}">{s.get("src","")}</a></p>', "html.parser"))
         else:
             s.decompose()
+    # Blogger: le immagini con didascalia sono dentro <table class="tr-caption-container">
+    for t in soup.select("table.tr-caption-container, table"):
+        imgs = t.find_all("img")
+        if not imgs:
+            continue
+        cap = t.select_one(".tr-caption")
+        new = BeautifulSoup("", "html.parser")
+        for im in imgs:
+            pnode = new.new_tag("p"); pnode.append(im.extract()); new.append(pnode)
+        if cap and cap.get_text(strip=True):
+            if not imgs[0].get("alt"):
+                imgs[0]["alt"] = cap.get_text(" ", strip=True)
+            pnode = new.new_tag("p"); em = new.new_tag("em"); em.string = cap.get_text(" ", strip=True)
+            pnode.append(em); new.append(pnode)
+        t.replace_with(new)
     save_images(soup, bundle)
     body = md(str(soup), heading_style="ATX", bullets="*", code_language="")
     body = re.sub(r"\n{3,}", "\n\n", body).strip() + "\n"
     fm = {"title": title, "date": date, "draft": False, "tags": tags,
           "source": source, "original_url": old_url}
-    if summary:
+    if summary and not summary.startswith("Exploring Digital Analytics"):
         fm["description"] = summary
     with open(os.path.join(bundle, "index.md"), "w") as f:
         f.write("---\n" + "\n".join(f"{k}: {json.dumps(v, ensure_ascii=False)}" for k, v in fm.items()) + "\n---\n\n" + body)
@@ -122,7 +142,7 @@ def blogger():
         pf = S.get(f"{BLOGGER}/feeds/pages/default?alt=json", timeout=60).json()["feed"]
         for e in pf.get("entry", []):
             url = next(l["href"] for l in e["link"] if l["rel"] == "alternate")
-            slug = slugify(e["title"]["$t"])
+            slug = urllib.parse.urlparse(url).path.split("/")[-1].replace(".html", "") or slugify(e["title"]["$t"])
             page_dir = os.path.join(ROOT, "content", slug)
             os.makedirs(page_dir, exist_ok=True)
             html = (e.get("content") or {}).get("$t")
@@ -133,7 +153,7 @@ def blogger():
             soup = BeautifulSoup(html, "html.parser")
             save_images(soup, page_dir)
             with open(os.path.join(page_dir, "index.md"), "w") as f:
-                f.write(f'---\ntitle: {json.dumps(e["title"]["$t"])}\nmenu: main\n---\n\n' + md(str(soup), heading_style="ATX"))
+                f.write(f'---\ntitle: {json.dumps(e["title"]["$t"])}\nmenu: main\n---\n\n' + md(str(soup), heading_style="ATX", bullets="*"))
             redirects.append((url, f"{NEW_BASE}/{slug}/"))
             print(f"  + pagina: {e['title']['$t']} -> /{slug}/")
     except Exception as ex:
