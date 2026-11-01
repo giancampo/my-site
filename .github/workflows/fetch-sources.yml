@@ -8,11 +8,11 @@ jobs:
     steps:
       - run: |
           mkdir raw && cd raw
-          G=$(getent ahostsv4 ghs.google.com | awk 'NR==1{print $1}')
+          G=$(getent ahostsv4 ghs.google.com | awk 'NR==2{print $1}')
           B=$(getent ahostsv4 cname.beehiiv.com | awk 'NR==1{print $1}')
           echo "ghs=$G beehiiv=$B"
-          for p in / 2024/11/attribution-masterclass-my-notes-pt-1.html 2024/11/attribution-masterclass-my-notes-pt-2.html 2024/11/attribution-masterclass-my-notes-pt-3.html 2024/02/understanding-new-gcd-parameter-in-ga4.html 2023/11/custom-event-named-as-automatic-event.html; do
-            curl -s --resolve www.giancampo.com:443:$G "https://www.giancampo.com/${p#/}" -o "blogger_$(echo $p | tr '/' '_').html"
+          for p in 2024/11/attribution-masterclass-my-notes-pt-1.html 2024/11/attribution-masterclass-my-notes-pt-2.html 2024/11/attribution-masterclass-my-notes-pt-3.html 2024/02/understanding-new-gcd-parameter-in-ga4.html /; do
+            sleep 8; curl -s -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/130 Safari/537.36" --resolve www.giancampo.com:443:$G "https://www.giancampo.com/${p#/}?m=0" -o "blogger_$(echo $p | tr '/' '_').html"
           done
           for s in attribution-masterclass-my-notes understanding-the-gcd-parameter-in-ga4-network-requests debugging-ga4-on-mobile-apps-and-android-webview-screens; do
             curl -s --resolve blog.giancampo.com:443:$B "https://blog.giancampo.com/p/$s" -o "beehiiv_$s.html"
