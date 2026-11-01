@@ -23,3 +23,16 @@ section.space-y-10 > h2 { margin-top: 1.75rem !important; margin-bottom: 0.75rem
 section.space-y-10 > h2:first-child { margin-top: 0.25rem !important; }
 /* sezione introduttiva vuota sopra l'elenco */
 section.prose.mb-10:has(> div:empty) { display: none; }
+
+/* Link nel testo sempre riconoscibili (sottolineati + colore accento) */
+.prose :where(a):not(:where(.not-prose *)) {
+  color: rgb(37 99 235);                 /* blu */
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: rgb(37 99 235 / 0.45);
+}
+.prose :where(a):not(:where(.not-prose *)):hover { text-decoration-color: currentColor; text-decoration-thickness: 2px; }
+.dark .prose :where(a):not(:where(.not-prose *)) { color: rgb(96 165 250); text-decoration-color: rgb(96 165 250 / 0.5); }
+/* niente sottolineatura sulle ancore dei titoli e sull'indice */
+.prose :where(h1,h2,h3,h4) a, .toc a { text-decoration: none !important; color: inherit !important; }
