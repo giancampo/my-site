@@ -7,7 +7,9 @@ Uso: pip install requests beautifulsoup4 markdownify && python3 scripts/migrate.
 """
 import csv, hashlib, json, os, re, sys, urllib.parse
 from datetime import datetime
-import requests
+import requests, warnings
+from bs4 import XMLParsedAsHTMLWarning
+warnings.filterwarnings("ignore", category=XMLParsedAsHTMLWarning)
 from bs4 import BeautifulSoup
 from markdownify import markdownify as md
 
@@ -109,7 +111,12 @@ def blogger():
             redirects.append((url, f"{NEW_BASE}/blog/{BLOGGER_TO_BEEHIIV[path]}/"))
             print(f"  = coperto da beehiiv: {title}")
             continue
-        write_post("blogger", title, e["published"]["$t"], e["content"]["$t"], tags, url)
+        html = (e.get("content") or {}).get("$t")
+        if not html:  # feed impostato su "breve": prendo il corpo dalla pagina
+            page = BeautifulSoup(S.get(url, timeout=60).text, "html.parser")
+            body = page.select_one(".post-body") or page.select_one(".entry-content") or page.find("article")
+            html = str(body) if body else e.get("summary", {}).get("$t", "")
+        write_post("blogger", title, e["published"]["$t"], html, tags, url)
     print("== Blogger pagine statiche")
     try:
         pf = S.get(f"{BLOGGER}/feeds/pages/default?alt=json", timeout=60).json()["feed"]
@@ -118,7 +125,12 @@ def blogger():
             slug = slugify(e["title"]["$t"])
             page_dir = os.path.join(ROOT, "content", slug)
             os.makedirs(page_dir, exist_ok=True)
-            soup = BeautifulSoup(e["content"]["$t"], "html.parser")
+            html = (e.get("content") or {}).get("$t")
+            if not html:
+                pg = BeautifulSoup(S.get(url, timeout=60).text, "html.parser")
+                b = pg.select_one(".post-body") or pg.find("article")
+                html = str(b) if b else ""
+            soup = BeautifulSoup(html, "html.parser")
             save_images(soup, page_dir)
             with open(os.path.join(page_dir, "index.md"), "w") as f:
                 f.write(f'---\ntitle: {json.dumps(e["title"]["$t"])}\nmenu: main\n---\n\n' + md(str(soup), heading_style="ATX"))
