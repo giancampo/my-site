@@ -7,13 +7,6 @@ source: "beehiiv"
 original_url: "/blog/understanding-the-gcd-parameter-in-ga4-network-requests/"
 ---
 
-## Table of Contents
-
-1. [The gcd parameter in GA4 network requests](#the-gcd-parameter-in-ga-4-network-r)
-2. [How beautiful is the gcs parameter instead](#how-beautiful-is-the-gcs-parameter-)
-3. [The trick I found to remember how to read the gcd …](#the-trick-i-found-to-remember-how-t)
-4. [Conclusions](#conclusions)
-
 **I have a problem: I don't remember things :)**That's why my Google Calendar is full of memos even for personal stuff I'm supposed to remember.
 
 Given this premise, **you can probably imagine how much I hate the new gcd parameter**, the parameter associated with Consent Mode v2 - populated with consent for the new signals ad\_user\_data and ad\_personalization.

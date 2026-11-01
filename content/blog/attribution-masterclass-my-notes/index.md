@@ -7,31 +7,6 @@ source: "beehiiv"
 original_url: "/blog/attribution-masterclass-my-notes/"
 ---
 
-## Table of Contents
-
-1. [Intro to Attribution](#intro-to-attribution)
-
-   1. [Attribution journeys](#attribution-journeys)
-   2. [Debunking Attribution Myths](#debunking-attribution-myths)
-   3. [Why we attribute](#why-we-attribute)
-   4. [Attribution and Business Strategy](#attribution-and-business-strategy)
-   5. [Types of Attribution](#types-of-attribution)
-2. [Multi-Touch Attribution](#multi-touch-attribution)
-
-   1. [UTM parameters](#utm-parameters)
-   2. [User journeys and user stitching](#user-journeys-and-user-stitching)
-   3. [How to analyze Multi-Touch Attribution (w/ Amplitu …](#how-to-analyze-multi-touch-attribut)
-3. [MMM, Incrementality](#mmm-incrementality)
-
-   1. [Intro](#intro)
-   2. [Incrementality](#incrementality)
-   3. [MMM](#mmm)
-4. [How to approach Attribution](#how-to-approach-attribution)
-
-   1. [People](#people)
-   2. [Tools](#tools)
-   3. [Checklist](#checklist)
-
 The Attribution Masterclass is a series about marketing attribution organized by [Timo Dechau](https://www.blogger.com/u/1/blog/post/edit/4558571487857691249/8327132209806996838#) and [Barbara Galiza](https://www.blogger.com/u/1/blog/post/edit/4558571487857691249/8327132209806996838#). I'm thrilled to share I've been in the first cohort taking the masterclass with regular meetups every Thursday in November 2024.
 
 Here follow my notes with the most important concepts shown during the masterclass. Some of the notions would be better explained using the slides the authors have made: For that, you need to actually enroll in the Masterclass: [here's the page where you can sign up](https://www.blogger.com/u/1/blog/post/edit/4558571487857691249/8327132209806996838#).
