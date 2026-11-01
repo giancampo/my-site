@@ -1,0 +1,22 @@
+locale = "en-us"
+label = "English"
+weight = 1
+title = "Gianluca Campo"
+
+[params]
+  displayName = "EN"
+  isoCode = "en"
+  rtl = false
+  dateFormat = "2 January 2006"
+  description = "Exploring Digital Analytics, Digital Marketing Data, and Automation"
+
+[params.author]
+  name = "Gianluca Campo"
+  headline = "Digital Analytics, Digital Marketing Data, Automation"
+  links = [
+    { linkedin = "https://www.linkedin.com/in/gianluca-campo/" },
+    { github = "https://github.com/giancampo" },
+    { bluesky = "https://bsky.app/profile/giancampo.com" },
+    { mastodon = "https://masto.measure.chat/@giancampo" },
+    { reddit = "https://www.reddit.com/user/giancampo" },
+  ]

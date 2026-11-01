@@ -7,18 +7,6 @@ source: "beehiiv"
 original_url: "/blog/debugging-ga4-on-mobile-apps-and-android-webview-screens/"
 ---
 
-## Table of Contents
-
-1. [Debugging GA4 on mobile apps](#debugging-ga-4-on-mobile-apps)
-
-   1. [Setup process](#setup-process)
-   2. [Debugging session](#debugging-session)
-2. [Debugging GA4 on web pages from mobile devices](#debugging-ga-4-on-web-pages-from-mo)
-
-   1. [Setup process](#setup-process)
-   2. [Debugging session](#debugging-session)
-3. [Debugging GA4 on hybrid apps with WebView screens](#debugging-ga-4-on-hybrid-apps-with-)
-
 We’ve found a high amount of traffic in our GA4 properties coming from mobile devices, web platform thus decided to debug the current implementation, considering we’ve inherited it from another consulting agency and then several app releases have been pushed in the meanwhile.
 
 The idea was to simulate traffic from the mobile app going to WebView screens and see if the app\_instance\_id - as recommended by Google - was cut causing GA to associate the WebView views to new sessions and users.

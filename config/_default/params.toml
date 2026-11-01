@@ -1,0 +1,67 @@
+# Blowfish – configurazione sobria, centrata sul testo
+colorScheme = "slate"
+defaultAppearance = "light"
+autoSwitchAppearance = true
+enableSearch = true
+enableCodeCopy = true
+mainSections = ["blog"]
+disableImageZoom = false   # click per ingrandire le immagini (medium-zoom)
+
+[header]
+  layout = "basic"
+
+[footer]
+  showMenu = true
+  showCopyright = true
+  showThemeAttribution = false
+  showAppearanceSwitcher = true
+  showScrollToTop = true
+
+[homepage]
+  layout = "page"
+  showRecent = true
+  showRecentItems = 10
+  showMoreLink = true
+  showMoreLinkDest = "/blog/"
+  cardView = false
+
+[article]
+  showDate = true
+  showDateUpdated = false
+  showAuthor = false
+  showHero = false
+  heroStyle = "basic"
+  showBreadcrumbs = false
+  showHeadingAnchors = true
+  showPagination = true
+  showReadingTime = true
+  showReadingProgress = true
+  showTableOfContents = true
+  showTaxonomies = true
+  showWordCount = false
+  showZenMode = true
+  showRelatedContent = true
+  relatedContentLimit = 3
+
+[list]
+  showHero = false
+  heroStyle = "basic"
+  showBreadcrumbs = false
+  showSummary = false
+  showCards = false
+  groupByYear = true
+  cardView = false
+
+[taxonomy]
+  showTermCount = true
+  showHero = false
+  cardView = false
+
+[term]
+  showHero = false
+  showTableOfContents = false
+  groupByYear = false
+  cardView = false
+
+[sitemap]
+  excludedKinds = ["taxonomy", "term"]

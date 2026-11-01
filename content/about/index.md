@@ -1,5 +1,9 @@
 ---
 title: "About Gianluca Campo"
+showDate: false
+showReadingTime: false
+showTableOfContents: false
+showZenMode: false
 menu:
   main:
     name: "About"
