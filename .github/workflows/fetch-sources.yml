@@ -8,10 +8,15 @@ jobs:
     steps:
       - run: |
           mkdir raw && cd raw
-          curl -sL "https://www.blogger.com/feeds/4558571487857691249/posts/default?alt=json&max-results=500" -o blogger_posts.json
-          curl -sL "https://www.blogger.com/feeds/4558571487857691249/pages/default?alt=json" -o blogger_pages.json
-          curl -sL "https://blog.giancampo.com/p/attribution-masterclass-my-notes" -o beehiiv_attribution.html || true
-          curl -sL "https://blog.giancampo.com/p/understanding-the-gcd-parameter-in-ga4-network-requests" -o beehiiv_gcd.html || true
-          ls -la
+          G=$(getent ahostsv4 ghs.google.com | awk 'NR==1{print $1}')
+          B=$(getent ahostsv4 cname.beehiiv.com | awk 'NR==1{print $1}')
+          echo "ghs=$G beehiiv=$B"
+          for p in / 2024/11/attribution-masterclass-my-notes-pt-1.html 2024/11/attribution-masterclass-my-notes-pt-2.html 2024/11/attribution-masterclass-my-notes-pt-3.html 2024/02/understanding-new-gcd-parameter-in-ga4.html 2023/11/custom-event-named-as-automatic-event.html; do
+            curl -s --resolve www.giancampo.com:443:$G "https://www.giancampo.com/${p#/}" -o "blogger_$(echo $p | tr '/' '_').html"
+          done
+          for s in attribution-masterclass-my-notes understanding-the-gcd-parameter-in-ga4-network-requests debugging-ga4-on-mobile-apps-and-android-webview-screens; do
+            curl -s --resolve blog.giancampo.com:443:$B "https://blog.giancampo.com/p/$s" -o "beehiiv_$s.html"
+          done
+          ls -la; grep -o "<title>[^<]*" *.html | head -20
           git init -q && git checkout -q -b sources-raw && git add . && git -c user.name=bot -c user.email=bot@x commit -qm raw
           git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" sources-raw
