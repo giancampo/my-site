@@ -1,0 +1,26 @@
+name: Migrate content from Blogger and beehiiv
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install requests beautifulsoup4 markdownify
+      - run: python3 scripts/migrate.py
+      - name: Open pull request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: content-migration
+          title: "Migrazione contenuti da Blogger e beehiiv"
+          commit-message: "Import post e immagini da Blogger e beehiiv"
+          body: "Post importati da www.giancampo.com (Blogger) e blog.giancampo.com (beehiiv). Mappa redirect in scripts/redirects.csv."

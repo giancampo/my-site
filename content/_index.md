@@ -10,7 +10,7 @@ If you want to explore Digital Analytics, Digital Marketing Data, and Automation
 
 ## Get in touch
 If you're looking for some more information about me please also have a look at my social profiles:
-* [Read my blog here](https://blog.giancampo.com/) 
+* [Read my blog here](/blog/) 
 * [LinkedIn](https://www.linkedin.com/in/gianluca-campo/)
 * [Reddit](https://www.reddit.com/user/giancampo)
 * [Github](https://github.com/giancampo)
