@@ -1,0 +1,25 @@
+/* Spaziature più compatte rispetto ai default di Blowfish/Tailwind Typography */
+
+/* Testo: interlinea e spazi tra paragrafi */
+.prose { line-height: 1.65; }
+.prose :where(p):not(:where(.not-prose *)) { margin-top: 0.9em; margin-bottom: 0.9em; }
+
+/* Liste: meno aria tra le voci */
+.prose :where(ul, ol):not(:where(.not-prose *)) { margin-top: 0.75em; margin-bottom: 0.75em; }
+.prose :where(li):not(:where(.not-prose *)) { margin-top: 0.2em; margin-bottom: 0.2em; }
+.prose :where(ul > li, ol > li) > p { margin-top: 0.3em; margin-bottom: 0.3em; }
+
+/* Titoli: restano ben separati ma senza voragini */
+.prose :where(h2):not(:where(.not-prose *)) { margin-top: 1.6em; margin-bottom: 0.6em; }
+.prose :where(h3):not(:where(.not-prose *)) { margin-top: 1.3em; margin-bottom: 0.5em; }
+.prose :where(h4):not(:where(.not-prose *)) { margin-top: 1.2em; margin-bottom: 0.4em; }
+
+/* Immagini e blocchi di codice */
+.prose :where(img, figure, pre):not(:where(.not-prose *)) { margin-top: 1.2em; margin-bottom: 1.2em; }
+
+/* Elenchi di articoli (blog, tag, home) */
+section.space-y-10 > * { margin-top: 0 !important; margin-bottom: 1.25rem !important; }
+section.space-y-10 > h2 { margin-top: 1.75rem !important; margin-bottom: 0.75rem !important; }
+section.space-y-10 > h2:first-child { margin-top: 0.25rem !important; }
+/* sezione introduttiva vuota sopra l'elenco */
+section.prose.mb-10:has(> div:empty) { display: none; }
