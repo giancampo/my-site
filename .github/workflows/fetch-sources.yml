@@ -1,0 +1,17 @@
+name: Fetch raw sources
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          mkdir raw && cd raw
+          curl -sL "https://www.blogger.com/feeds/4558571487857691249/posts/default?alt=json&max-results=500" -o blogger_posts.json
+          curl -sL "https://www.blogger.com/feeds/4558571487857691249/pages/default?alt=json" -o blogger_pages.json
+          curl -sL "https://blog.giancampo.com/p/attribution-masterclass-my-notes" -o beehiiv_attribution.html || true
+          curl -sL "https://blog.giancampo.com/p/understanding-the-gcd-parameter-in-ga4-network-requests" -o beehiiv_gcd.html || true
+          ls -la
+          git init -q && git checkout -q -b sources-raw && git add . && git -c user.name=bot -c user.email=bot@x commit -qm raw
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" sources-raw
